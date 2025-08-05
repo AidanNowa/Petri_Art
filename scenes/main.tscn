@@ -1,0 +1,76 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1iswio38onry"]
+
+[ext_resource type="Script" path="res://scripts/UIController.gd" id="1_vsb1i"]
+[ext_resource type="Script" path="res://main.gd" id="2_m1vi1"]
+
+[node name="PetriLab" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PetriUIController" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_vsb1i")
+
+[node name="PetriDish" type="Node2D" parent="PetriUIController"]
+script = ExtResource("2_m1vi1")
+
+[node name="ToolPanel" type="VBoxContainer" parent="PetriUIController"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 220.0
+offset_bottom = 170.0
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="PetriUIController/ToolPanel"]
+layout_mode = 2
+text = "Tools"
+
+[node name="ToolButtons" type="HBoxContainer" parent="PetriUIController/ToolPanel"]
+layout_mode = 2
+
+[node name="ControlPanel" type="VBoxContainer" parent="PetriUIController"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -260.0
+offset_top = 20.0
+offset_right = -60.0
+offset_bottom = 170.0
+grow_horizontal = 0
+metadata/_edit_group_ = true
+
+[node name="RunButton" type="Button" parent="PetriUIController/ControlPanel"]
+layout_mode = 2
+
+[node name="StepButton" type="Button" parent="PetriUIController/ControlPanel"]
+layout_mode = 2
+
+[node name="ClearButton" type="Button" parent="PetriUIController/ControlPanel"]
+layout_mode = 2
+
+[node name="InfoPanel" type="VBoxContainer" parent="PetriUIController"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -160.0
+offset_right = 320.0
+offset_bottom = -60.0
+grow_vertical = 0
+metadata/_edit_group_ = true
+
+[node name="LevelLabel" type="Label" parent="PetriUIController/InfoPanel"]
+layout_mode = 2
+
+[node name="ObjectiveLabel" type="Label" parent="PetriUIController/InfoPanel"]
+layout_mode = 2
+
+[node name="StatusLabel" type="Label" parent="PetriUIController/InfoPanel"]
+layout_mode = 2
